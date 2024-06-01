@@ -84,6 +84,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'ERPAdmin.wsgi.application'
 
 
