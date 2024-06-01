@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import AdminSite
 from django.utils.safestring import mark_safe
 from .models import Categorie, Klant, Product, Bestelling
 
