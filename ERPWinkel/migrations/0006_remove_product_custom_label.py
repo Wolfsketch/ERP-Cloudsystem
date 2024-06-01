@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('winkel', '0005_product_custom_label_alter_product_korting_prijs'),
+        ('ERPWinkel', '0005_product_custom_label_alter_product_korting_prijs'),
     ]
 
     operations = [

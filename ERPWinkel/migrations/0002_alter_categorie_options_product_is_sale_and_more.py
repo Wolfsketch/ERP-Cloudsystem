@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('winkel', '0001_initial'),
+        ('ERPWinkel', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
             name='categorie',
-            options={'verbose_name_plural': 'Categorie'},
+            options={'verbose_name_plural': 'categorie'},
         ),
         migrations.AddField(
             model_name='product',
