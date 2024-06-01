@@ -8,4 +8,6 @@ urlpatterns = [
     path('admin/', admin_site.urls),  # Gebruik je aangepaste AdminSite
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('ERPWinkel.urls')),
+    path('grappelli/', include('grappelli.urls')),  # grappelli URL's
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{{ title }} | Mijn Webshop Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Mijn Webshop Admin</a></h1>
+{% endblock %}
+
+{% block nav-global %}{{ block.super }}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/sb-admin-min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/styles.css' %}">
+{% endblock %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{% static 'assets/js/sb-admin-min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/scripts.js' %}"></script>
+{% endblock %}

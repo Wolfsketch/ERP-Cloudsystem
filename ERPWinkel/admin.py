@@ -2,12 +2,12 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from .models import Categorie, Klant, Product, Bestelling
 
-class CustomAdminSite(admin.AdminSite):
-    site_header = "Mijn Webshop Admin"
-    site_title = "Webshop Admin Portal"
-    index_title = "Welkom bij de Webshop Admin"
+class MyAdminSite(AdminSite):
+    site_header = 'Mijn Webshop Admin'
+    site_title = 'Webshop Admin Portal'
+    index_title = 'Welkom bij de Webshop Admin'
 
-admin_site = CustomAdminSite(name='custom_admin')
+admin_site = MyAdminSite(name='myadmin')
 
 @admin.register(Categorie, site=admin_site)
 class CategorieAdmin(admin.ModelAdmin):
