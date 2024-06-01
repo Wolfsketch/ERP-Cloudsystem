@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Categorie',
+            name='categorie',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('Productnaam', models.CharField(max_length=50)),
@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('Omschrijving', models.CharField(blank=True, default='', max_length=250, null=True)),
                 ('Prijs', models.DecimalField(decimal_places=0, default=0, max_digits=8)),
                 ('Image', models.ImageField(upload_to='uploads/product/')),
-                ('Categorie', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='winkel.categorie')),
+                ('categorie', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='ERPWinkel.categorie')),
             ],
         ),
         migrations.CreateModel(
@@ -55,8 +55,8 @@ class Migration(migrations.Migration):
                 ('Telefoonnummer', models.CharField(max_length=18)),
                 ('Datum', models.DateField(default=datetime.datetime.today)),
                 ('Status', models.BooleanField(default=False)),
-                ('Klant', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='winkel.klant')),
-                ('Product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='winkel.product')),
+                ('Klant', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ERPWinkel.klant')),
+                ('Product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ERPWinkel.product')),
             ],
         ),
     ]
