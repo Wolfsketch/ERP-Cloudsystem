@@ -6,7 +6,7 @@ from ERPWinkel.admin import admin_site
 from ERPWinkel import views as winkel_views
 
 urlpatterns = [
-    path('admin/', admin_site.urls),
+    path('admin/', winkel_views.admin_dashboard, name='admin_dashboard'),
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('ERPWinkel.urls')),
     path('grappelli/', include('grappelli.urls')),
@@ -16,5 +16,6 @@ urlpatterns = [
     path('admin/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='admin/password_reset_confirm.html'), name='password_reset_confirm'),
     path('admin/reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='admin/password_reset_complete.html'), name='password_reset_complete'),
     path('admin/register/', winkel_views.RegisterView.as_view(), name='register'),
-    path('admin/dashboard/', winkel_views.admin_dashboard, name='admin_dashboard'),
+    path('admin/', admin_site.urls),
+    # andere URL-patronen
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

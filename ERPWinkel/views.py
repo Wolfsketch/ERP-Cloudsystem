@@ -17,4 +17,4 @@ class RegisterView(generic.CreateView):
     template_name = 'admin/register.html'
 
 def admin_dashboard(request):
-    return render(request, 'admin.html')
+    return render(request, 'admin/admin.html')
