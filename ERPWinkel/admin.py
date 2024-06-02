@@ -6,7 +6,9 @@ from .models import Categorie, Klant, Product, Bestelling
 class MyAdminSite(AdminSite):
     site_header = 'Mijn Webshop Admin'
     site_title = 'Webshop Admin Portal'
-    index_title = 'Welkom bij de Webshop Admin'
+    index_title = 'Welkom bij de Admin'
+    index_template = 'admin/custom_base.html'
+
 
 admin_site = MyAdminSite(name='myadmin')
 

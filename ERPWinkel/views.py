@@ -7,3 +7,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def my_view(request):
+    print("View wordt aangeroepen")  # Debug statement
+    return render(request, 'admin/base_site.html', {})
