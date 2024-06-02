@@ -4,11 +4,16 @@ from django.utils.safestring import mark_safe
 from .models import Categorie, Klant, Product, Bestelling
 
 class MyAdminSite(AdminSite):
-    site_header = 'Mijn Webshop Admin'
-    site_title = 'Webshop Admin Portal'
-    index_title = 'Welkom bij de Admin'
-    index_template = 'admin/custom_base.html'
+    index_template = 'admin.html'
 
+    def get_urls(self):
+        from django.urls import path
+        from . import views
+        urls = super().get_urls()
+        custom_urls = [
+            path('dashboard/', views.admin_dashboard, name='admin_dashboard'),
+        ]
+        return custom_urls + urls
 
 admin_site = MyAdminSite(name='myadmin')
 
